@@ -1,7 +1,7 @@
 import './Root.css';
 import { Button } from '../../components/Button';
 
-function Root() {
+export function Root() {
   return (
     <div className="Root-App">
       <header className="Root-App-header">
@@ -11,5 +11,3 @@ function Root() {
     </div>
   );
 }
-
-export default Root;
