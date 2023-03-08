@@ -4,13 +4,15 @@ import './index.css';
 import Root from './routes/root';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ErrorPage } from './routes/error/errorPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />
+    element: <Root />,
+    errorElement: <ErrorPage />
   }
 ])
 
