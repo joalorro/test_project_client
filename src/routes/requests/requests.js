@@ -1,6 +1,8 @@
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Header } from '../../components/Header/header';
 import { Button } from '../../components/Button';
+
+import './requests.css';
 
 const BASE_URL = 'http://localhost:3001';
 const EXAMPLES_URL = `${BASE_URL}/examples`;
@@ -36,21 +38,21 @@ const handlePost = async () => {
 
 export const Requests = () => {
   return (
-    <div>
-      <Link to="/">
-        <Button text="Back to homepage" />
-      </Link>
-      <section>
-        <h1>Welcome to the requests page</h1>
-      </section>
-      <section>
-        <h3>Send GET Request to /examples </h3>
-        <Button text="Send" onClick={handleGet} />
-      </section>
-      <section>
-        <h3>Send POST Request to /examples </h3>
-        <Button text="Send" onClick={handlePost} />
-      </section>
-    </div>
+    <>
+      <Header mountHeader={true} />
+      <div className="requests-page">
+        <section className="requests-page__section">
+          <h1>Welcome to the requests page</h1>
+        </section>
+        <section>
+          <h3>Send GET Request to /examples </h3>
+          <Button text="Send" onClick={handleGet} />
+        </section>
+        <section>
+          <h3>Send POST Request to /examples </h3>
+          <Button text="Send" onClick={handlePost} />
+        </section>
+      </div>
+    </>
   );
 };
